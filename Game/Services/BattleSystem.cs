@@ -4,6 +4,18 @@ public class BattleSystem
 {
     public void StartBattle(Player player, Enemy enemy)
     {
+        // Show active buffs
+        if (player.ActiveBuffs.Count > 0)
+        {
+            Console.Write("Active buffs: ");
+            foreach (var buff in player.ActiveBuffs)
+            {
+                if (buff == "Strength")
+                    Console.Write("[STR] ");
+            }
+            Console.WriteLine();
+        }
+
         Console.WriteLine($"\nA wild {enemy.Name} appears!");
 
         while (player.HP > 0 && enemy.HP > 0)
@@ -27,6 +39,9 @@ public class BattleSystem
                 {
                     Console.WriteLine($"You defeated the {enemy.Name}!");
                     player.Coins += 10;
+                    player.BonusAttack = 0;
+                    player.ActiveBuffs.Clear();
+
                     return;
                 }
             }
@@ -43,6 +58,8 @@ public class BattleSystem
             {
                 Console.WriteLine("You have been defeated...");
                 player.Coins -= 5;
+                player.BonusAttack = 0;
+                player.ActiveBuffs.Clear();
                 player.HP = player.MaxHP;
                 return;
             }

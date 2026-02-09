@@ -5,7 +5,9 @@ public class InventoryMenu
     public void Show(Player player)
     {
         Console.WriteLine("\n=== Inventory ===");
+        Console.WriteLine($"HP: {player.HP}/{player.MaxHP}");
         Console.WriteLine($"Coins: {player.Coins}");
+
 
         if (player.Inventory.Items.Count == 0)
         {
@@ -31,6 +33,16 @@ public class InventoryMenu
 
             if (item.IsConsumable)
             {
+                if (item.Name == "Strength Potion")
+                {
+                    player.BonusAttack += 5;
+                    Console.WriteLine("You feel stronger! Attack increased by 5 for this battle.");
+                    player.ActiveBuffs.Add("Strength");
+                    player.Inventory.Items.RemoveAt(index);
+                    return;
+                }
+
+                // Maksym - Healing potion
                 player.HP = Math.Min(player.MaxHP, player.HP + item.HealAmount);
                 Console.WriteLine($"You used {item.Name} and restored {item.HealAmount} HP!");
                 player.Inventory.Items.RemoveAt(index);

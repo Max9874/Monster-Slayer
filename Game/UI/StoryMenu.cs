@@ -6,4 +6,5 @@ public class StoryMenu
     {
         Console.WriteLine("Welcome, adventurer. Your journey begins in a small peaceful town...");
     }
+    
 }

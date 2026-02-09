@@ -4,10 +4,13 @@ public class LocationManager // Maksymm - Location manager handles player moveme
 {
     
 
-    public void GoToHome()
+    public void GoToHome(Player player)
     {
         Console.WriteLine("You are at your home. It's peaceful here.");
+        new HomeManager().RestAtHome(player);
     }
+
+    
 
     public void GoToFountain()
     {
