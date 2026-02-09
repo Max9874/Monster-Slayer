@@ -25,6 +25,7 @@ public class MainMenu
             Console.WriteLine("4 — To the shop");
             Console.WriteLine("5 — To the guild");
             Console.WriteLine("6 — Dungeon");
+            Console.WriteLine("7 — Home");
             Console.WriteLine("0 — Exit");
 
             string choice = Console.ReadLine();
@@ -37,6 +38,7 @@ public class MainMenu
                 case "4": loc.GoToShop(player); break;
                 case "5": loc.GoToGuild(_questManager); break;
                 case "6": loc.GoToDungeon(player, _questManager); break;
+                case "7": loc.GoToHome(player); break;
                 case "0": return;
             }
             // player.Inventory.Show()

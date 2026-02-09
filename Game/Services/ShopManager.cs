@@ -11,13 +11,10 @@ public class ShopManager // Maksym - Shop manager allows the player to buy weapo
 
     public List<Item> Items = new List<Item>()
     {
-    ItemFactory.RegenerationPotion()
+        ItemFactory.RegenerationPotion(),
+        ItemFactory.StrenghtPotion()
     };
 
-    /*public List<Item> Items { get; } = new List<Item>()
-    {
-        new Item("Health Potion", "Restores 50 HP", true, 15),
-    };*/
 
     public void OpenShop(Player player)
     {

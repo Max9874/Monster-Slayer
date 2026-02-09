@@ -15,4 +15,14 @@ public static class ItemFactory // Maksym - All items
             50
         );
     }
+
+    public static Item StrenghtPotion()
+    {
+        return new Item(
+            "Strenght Potion",
+            "Increases your attack by 5 for the next battle",
+            true,
+            0
+            );
+    }
 }
