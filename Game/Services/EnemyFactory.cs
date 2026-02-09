@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public static class EnemyFactory
+public static class EnemyFactory // Maksym - All types of enemies
 {
     private static Random rnd = new Random();
 

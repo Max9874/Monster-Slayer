@@ -9,6 +9,11 @@ public class ShopManager // Maksym - Shop manager allows the player to buy weapo
         new Weapon("Hero's Blade", 20, 50)
     };
 
+    public List<Item> Items = new List<Item>()
+    {
+    ItemFactory.RegenerationPotion()
+    };
+
     /*public List<Item> Items { get; } = new List<Item>()
     {
         new Item("Health Potion", "Restores 50 HP", true, 15),
@@ -16,13 +21,24 @@ public class ShopManager // Maksym - Shop manager allows the player to buy weapo
 
     public void OpenShop(Player player)
     {
-        Console.WriteLine("\n=== Weapon Shop ===");
+        Console.WriteLine("\n=== Shop ===");
 
+
+        Console.WriteLine("\n--- Weapons ---");
         for (int i = 0; i < Weapons.Count; i++)
         {
             var w = Weapons[i];
             Console.WriteLine($"{i + 1}. {w.Name} — Damage: {w.Damage} — Price: {w.Price} coins");
         }
+
+
+        Console.WriteLine("\n--- Items ---");
+        for (int i = 0; i < Items.Count; i++)
+        {
+            var item = Items[i];
+            Console.WriteLine($"{Weapons.Count + i + 1}. {item.Name} — {item.Description} — Price: 15 coins");
+        }
+
 
         Console.WriteLine("0. Exit shop");
         Console.Write("Choose an item: ");
@@ -32,25 +48,30 @@ public class ShopManager // Maksym - Shop manager allows the player to buy weapo
 
         int index = int.Parse(input) - 1;
 
-        if (index < 0 || index >= Weapons.Count)
+        if (index >= 0 && index < Weapons.Count)
         {
-            Console.WriteLine("Invalid choice.");
+            var weapon_product = Weapons[index];
+            if (player.Coins >= weapon_product.Price)
+            {
+                player.Coins -= weapon_product.Price;
+                player.EquippedWeapon = weapon_product;
+                Console.WriteLine($"You bought {weapon_product.Name}!");
+            }
+            else Console.WriteLine("Not enough coins.");
             return;
         }
 
-        var weapon = Weapons[index];
-
-        if (player.Coins >= weapon.Price)
+        int itemIndex = index - Weapons.Count;
+        if (itemIndex >= 0 && itemIndex < Items.Count)
         {
-            player.Coins -= weapon.Price;
-            player.EquippedWeapon = weapon;
-            Console.WriteLine($"You bought {weapon.Name}!");
-            player.Inventory.Add(weapon);
+            if (player.Coins >= 15)
+            {
+                player.Coins -= 15;
+                player.Inventory.Add(Items[itemIndex]);
+                Console.WriteLine($"You bought {Items[itemIndex].Name}!");
+            }
+            else Console.WriteLine("Not enough coins.");
+        }
 
-        }
-        else
-        {
-            Console.WriteLine("Not enough coins.");
-        }
     }
 }

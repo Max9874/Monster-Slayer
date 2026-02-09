@@ -41,8 +41,5 @@ public class InventoryManager
         player.Inventory.Remove(item);
     }
 
-    public void ShowInventory(Player player)
-    {
-        player.Inventory.Show();
-    }
+    
 }
