@@ -27,9 +27,18 @@ public class QuestManager
     public void ShowQuests()
     {
         Console.WriteLine("\n=== Active Quests ===");
-        foreach (var quest in ActiveQuests)
+        if (ActiveQuests.Count == 0)
         {
-            Console.WriteLine($"{quest.Title} — {quest.CurrentAmount}/{quest.RequiredAmount}");
+            Console.WriteLine("You have no active quests.");
+            return;
         }
+        else {
+            foreach (var quest in ActiveQuests)
+            {
+                Console.WriteLine($"{quest.Title} — {quest.CurrentAmount}/{quest.RequiredAmount}");
+            }
+        }
+            
+        
     }
 }

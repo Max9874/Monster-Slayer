@@ -24,6 +24,8 @@ public class HomeManager // Maksym - Adds activities in the Home location.
             player.HP = player.MaxHP;
             player.BonusAttack = 0;
             player.ActiveBuffs.Clear();
+            Console.WriteLine("\n\n===  Dream  ===\n");
+            Console.WriteLine(DreamsFactory.GetRandomDream() + "\n");
 
             Console.WriteLine("You are fully rested. HP restored!");
         }

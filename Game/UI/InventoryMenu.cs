@@ -5,7 +5,9 @@ public class InventoryMenu
     public void Show(Player player)
     {
         Console.WriteLine("\n=== Inventory ===");
+        Console.WriteLine($"HP: {player.HP}/{player.MaxHP}");
         Console.WriteLine($"Coins: {player.Coins}");
+
 
         if (player.Inventory.Items.Count == 0)
         {

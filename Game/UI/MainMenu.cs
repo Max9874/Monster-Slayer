@@ -18,6 +18,7 @@ public class MainMenu
 
         while (true)
         {
+
             Console.WriteLine("\n=== Main menu ===");
             Console.WriteLine("1 — Inventory");
             Console.WriteLine("2 — Quests");
