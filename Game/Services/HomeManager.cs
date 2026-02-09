@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class HomeManager
+public class HomeManager // Maksym - Adds activities in the Home location. 
 {
 
 
@@ -12,7 +12,7 @@ public class HomeManager
     {
         Console.WriteLine("\n1 — Rest");
         Console.WriteLine("2 — Exit");
-        Console.Write("Choose action: ");
+        Console.Write("Choose action: "); 
 
         string choice = Console.ReadLine();
 
