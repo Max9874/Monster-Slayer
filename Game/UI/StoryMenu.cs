@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class StoryMenu
+public class StoryMenu // Maksym - storage of the story lines 
 {
-    public void ShowIntro()
+    public static void ShowIntro()
     {
         Console.WriteLine("Welcome, adventurer. Your journey begins in a small peaceful town...");
     }

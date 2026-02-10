@@ -1,18 +1,18 @@
 ﻿using System;
 
-public class MainMenu
+public class MainMenu // Maksym - The main menu of the game, allowing the player to access different locations 
 {
+    
+    private QuestManager _questManager = new QuestManager(); 
 
-    private QuestManager _questManager = new QuestManager();
+    private QuestMenu _questMenu; 
 
-    private QuestMenu _questMenu;
-
-    public MainMenu()
+    public MainMenu() // Maksym - Constructor initializes the QuestMenu when the MainMenu object is created
     {
         _questMenu = new QuestMenu(_questManager);
     }
 
-    public void Show(Player player)
+    public void Show(Player player) // Maksym - Displays the main menu and handles player input to navigate to different locations and menus
     {
         LocationManager loc = new LocationManager();
 
@@ -29,7 +29,10 @@ public class MainMenu
             Console.WriteLine("7 — Home");
             Console.WriteLine("0 — Exit");
 
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine() ?? "1";
+
+            
+
 
             switch (choice)
             {
@@ -42,8 +45,6 @@ public class MainMenu
                 case "7": loc.GoToHome(player); break;
                 case "0": return;
             }
-            // player.Inventory.Show()
-            // InventoryMenu().Show(player)
         }
     }
 }

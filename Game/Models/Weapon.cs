@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Weapon : Item
+public class Weapon : Item // Class representing weapons 
 {
     public int Damage { get; }
     public int Price { get; }

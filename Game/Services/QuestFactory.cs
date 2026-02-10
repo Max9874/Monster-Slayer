@@ -19,25 +19,25 @@ public static class QuestFactory // Maksym - quests in the guild
             "Defeat 3 goblins in the dungeon.",
             QuestType.KillEnemy,
             "Goblin",
-            3),
+            3, 50),
             1 => new Quest(
             "Skeleton Slayer",
             "Defeat 3 Skeletons in the dungeon.",
             QuestType.KillEnemy,
             "Skeleton",
-            3),
+            3, 100),
             2 => new Quest(
             "Wolf Slayer",
             "Defeat 3 Woolves in the dungeon.",
             QuestType.KillEnemy,
             "Wolf",
-            3),
+            3, 30),
             _ => new Quest(
             "HopGoblin Slayer",
             "Defeat 3 HopGoblins in the dungeon.",
             QuestType.KillEnemy,
             "HopGoblin",
-            3)
+            3, 20)
         };
     }
 }

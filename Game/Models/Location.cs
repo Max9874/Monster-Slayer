@@ -1,6 +1,6 @@
 ﻿using System;
 
-public enum LocationType
+public enum LocationType // Maksym - Types of locations in the game
 {
     Home,
     Fountain,
@@ -9,7 +9,7 @@ public enum LocationType
     Dungeon
 }
 
-public class Location
+public class Location // Maksym - Represents a location in the game world
 {
     public LocationType Type { get; }
     public string Description { get; }

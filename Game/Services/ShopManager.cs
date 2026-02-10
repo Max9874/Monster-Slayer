@@ -1,6 +1,4 @@
-﻿using System;
-
-public class ShopManager // Maksym - Shop manager allows the player to buy weapons and items
+﻿public class ShopManager // Maksym - Shop manager allows the player to buy weapons and items
 {
     public List<Weapon> Weapons { get; } = new List<Weapon>()
     {
@@ -40,10 +38,18 @@ public class ShopManager // Maksym - Shop manager allows the player to buy weapo
         Console.WriteLine("0. Exit shop");
         Console.Write("Choose an item: ");
 
-        string input = Console.ReadLine();
+        string input = Console.ReadLine() ?? "0"; // Setting default to "0" to handle null input.
         if (input == "0") return;
 
+        if (!int.TryParse(input, out int indexx)) // Maksym - Handles incorrect input. 
+        {
+            Console.WriteLine("\nIncorrect input\n");
+            return;
+        }
+
+
         int index = int.Parse(input) - 1;
+
 
         if (index >= 0 && index < Weapons.Count)
         {

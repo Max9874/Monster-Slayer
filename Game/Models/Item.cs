@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Item
+public class Item // Maksym - Represents base class for items 
 {
     public string Name { get; }
     public string Description { get; }

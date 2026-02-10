@@ -8,13 +8,14 @@ public class HomeManager // Maksym - Adds activities in the Home location.
 {
 
 
-    public void RestAtHome(Player player)
+    public void RestAtHome(Player player) // Maksym - Method to handle resting at home
     {
+        // Restores player's HP and shows a random dream
         Console.WriteLine("\n1 — Rest");
         Console.WriteLine("2 — Exit");
         Console.Write("Choose action: "); 
 
-        string choice = Console.ReadLine();
+        string choice = Console.ReadLine() ?? "2";
 
         if (choice == "1")
         {

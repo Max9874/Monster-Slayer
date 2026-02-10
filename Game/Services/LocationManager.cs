@@ -30,7 +30,7 @@ public class LocationManager // Maksymm - Location manager handles player moveme
 
     public void GoToDungeon(Player player, QuestManager questManager) // rewrite, not done yet
     {
-        Enemy enemy = EnemyFactory.GetRandomEnemy();
+        /*Enemy enemy = EnemyFactory.GetRandomEnemy();
         BattleSystem battle = new BattleSystem();
 
         battle.StartBattle(player, enemy);
@@ -38,7 +38,10 @@ public class LocationManager // Maksymm - Location manager handles player moveme
         if (enemy.HP <= 0)
         {
 
-            questManager.UpdateProgress(enemy.Name);
+            questManager.UpdateProgress(enemy.Name, player);
         }
+        */ // code that WORKS, in case of anything, just bring it back 
+        
+        new DungeonManager().Enter(player, questManager);
     }
 }

@@ -8,7 +8,7 @@ public class Player // Maksym - Represents the player character in the game
     public int Attack { get; set; } = 1;
     public int Coins { get; set; } = 10;
     public int BonusAttack { get; set; } = 0;
-    public List<string> ActiveBuffs { get; set; } = new List<string>();
+    public List<string> ActiveBuffs { get; set; } = new List<string>(); // Maksym - List of active buffs
 
 
     public Inventory Inventory { get; set; } = new Inventory();

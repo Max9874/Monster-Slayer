@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class QuestMenu
+public class QuestMenu 
 {
     private QuestManager _questManager;
 

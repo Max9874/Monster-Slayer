@@ -21,7 +21,7 @@ public class InventoryMenu
         }
 
         Console.WriteLine("Select an item to use or press 0 to exit:");
-        string input = Console.ReadLine();
+        string input = Console.ReadLine() ?? "0";
 
         if (input == "0") return;
 
