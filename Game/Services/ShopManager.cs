@@ -23,7 +23,12 @@
         for (int i = 0; i < Weapons.Count; i++)
         {
             var w = Weapons[i];
-            Console.WriteLine($"{i + 1}. {w.Name} — Damage: {w.Damage} — Price: {w.Price} coins");
+
+            if (w.Name == "Hero's Blade")
+            {
+                Console.WriteLine($"{i + 1}. {Colorizer.Flash(w.Name)} — Damage: {w.Damage} — Price: {Colorizer.ColorizeInt(w.Price, "Yellow")} coins");
+            }
+            else Console.WriteLine($"{i + 1}. {Colorizer.ColorizeString(w.Name,"DarkGray")} — Damage: {w.Damage} — Price: {Colorizer.ColorizeInt(w.Price, "Yellow")} coins");
         }
 
 
